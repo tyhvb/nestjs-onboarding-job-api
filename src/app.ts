@@ -6,6 +6,7 @@ import { DbModule } from './_db';
 import config from '@config/index';
 import { CoreModule } from '@libs/core';
 import { ConsoleModule } from '@squareboat/nest-console';
+import { JobModule } from "./job";
 
 @Module({
   imports: [
@@ -18,7 +19,8 @@ import { ConsoleModule } from '@squareboat/nest-console';
       isGlobal: true,
       expandVariables: true,
       load: config,
-    }),
+    }), 
+    JobModule
   ],
   controllers: [],
   providers: [],
